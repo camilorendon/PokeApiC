@@ -3,16 +3,14 @@
 }
 
 <div class="text-center d-flex justify-content-center align-items-center">
-    <h1 class="display-4">hola a todos!</h1>
+    <h1 class="display-4">PokeAPi</h1>
     <ul>
         @foreach(var pokemon in Model.results){
             <li class="btn btn-primary m-2">
-
                 @pokemon.name
             </li>
-
-
         }
     </ul>
     @Model.next
+    @Model.previous
 </div>
