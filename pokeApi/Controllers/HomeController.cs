@@ -18,7 +18,7 @@ namespace pokeApi.Controllers
         {
             //https://pokeapi.co/api/v2/pokemon/
             var httpClient = new HttpClient();
-            var json = await httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/");
+            var json = await httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/?offset=10&limit=10");
             var result = JsonConvert.DeserializeObject(json);
             return View(result);
         }

@@ -11,24 +11,22 @@
             </li>
         }
     </ul>
-    @{
-        var cantidadPaginas = (int)Math.Ceiling((double)Model.Pokemons / Model.RegistrosPorPagina);
-    }
-    @if (Model.next==1)
+    
+    @if (Model.PaginaActual==1)
     {
-        <li class="disabled">@Html.ActionLink("Anterior", null, new {pagina = 1})</li>
+        <li class="btn btn-success">@Html.ActionLink("Anterior", null, new {pagina = 1})</li>
     }
     else
     {
-        <li>@Html.ActionLink("Anterior", null, new {pagina = Model.PaginaActual - 1})</li>
+        <li class="btn btn-success"class>@Html.ActionLink("Anterior", null, new {pagina = Model.PaginaActual - 1})</li>
     }
-    @if (Model.PAginaActual == cantidadPaginas)
+    @if (Model.PaginaActual == 1)
     {
-        <li class="disabled">@Html.ActionLink("Siguiente", null, new {pagina = cantidadPaginas })</li>
+        <li class="btn btn-success">@Html.ActionLink("Siguiente", null, new {pagina = 1 })</li>
     }
     else
     {
-        <li>@Html.ActionLink("Siguiente", null, new {pagina = Model.PaginaActual + 1})</li>
+        <li class="btn btn-success">@Html.ActionLink("Siguiente", null, new {pagina = Model.PaginaActual + 1})</li>
     }
 
 
