@@ -11,23 +11,10 @@
             </li>
         }
     </ul>
+    <button class="btn btn-success">Previous</button>
+    <buton class="btn btn-success">Next</buton>
     
-    @if (Model.PaginaActual==1)
-    {
-        <li class="btn btn-success">@Html.ActionLink("Anterior", null, new {pagina = 1})</li>
-    }
-    else
-    {
-        <li class="btn btn-success"class>@Html.ActionLink("Anterior", null, new {pagina = Model.PaginaActual - 1})</li>
-    }
-    @if (Model.PaginaActual == 1)
-    {
-        <li class="btn btn-success">@Html.ActionLink("Siguiente", null, new {pagina = 1 })</li>
-    }
-    else
-    {
-        <li class="btn btn-success">@Html.ActionLink("Siguiente", null, new {pagina = Model.PaginaActual + 1})</li>
-    }
+
 
 
 </div>

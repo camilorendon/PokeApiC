@@ -14,7 +14,7 @@ namespace pokeApi.Controllers
             _logger = logger;
         }
 
-        public async Task <IActionResult> Index()
+        public async Task <IActionResult> Index(int pagina = 1)
         {
             //https://pokeapi.co/api/v2/pokemon/
             var httpClient = new HttpClient();
@@ -22,7 +22,7 @@ namespace pokeApi.Controllers
             var result = JsonConvert.DeserializeObject(json);
             return View(result);
         }
-
+       
         public IActionResult Privacy()
         {
             return View();
