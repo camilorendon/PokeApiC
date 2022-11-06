@@ -22,6 +22,10 @@ namespace pokeApi.Controllers
 			var result = JsonConvert.DeserializeObject(json);
 			return View(result);
 		}
+		public IActionResult Edit()
+		{
+			return View();
+		}
 	   
 		public IActionResult Privacy()
 		{
