@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using pokeApi.Models;
 using System.Diagnostics;
+using System.Security.Policy;
 
 namespace pokeApi.Controllers
 {
@@ -14,17 +15,13 @@ namespace pokeApi.Controllers
 			_logger = logger;
 		}
 
-		public async Task <IActionResult> Index()
+		public async Task <IActionResult> Index(string ruta = "https://pokeapi.co/api/v2/pokemon/")
 		{
 			//https://pokeapi.co/api/v2/pokemon/
 			var httpClient = new HttpClient();
-			var json = await httpClient.GetStringAsync("https://pokeapi.co/api/v2/pokemon/?offset=10&limit=20");
+			var json = await httpClient.GetStringAsync(ruta);
 			var result = JsonConvert.DeserializeObject(json);
 			return View(result);
-		}
-		public IActionResult Edit()
-		{
-			return View();
 		}
 	   
 		public IActionResult Privacy()

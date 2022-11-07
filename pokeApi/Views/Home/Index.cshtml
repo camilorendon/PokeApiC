@@ -3,6 +3,9 @@
 }
 
 <div class="text-center d-flex justify-content-center align-items-center">
+    <a asp-controller="Login" asp-action="login">Login</a>
+    <a asp-controller="Login" asp-action="register">Register</a>
+
     <h1 class="display-4">PokeAPi</h1>
     <ul>
         @foreach(var pokemon in Model.results){
@@ -11,4 +14,8 @@
             </li>
         }
     </ul>
+    <a class="btn btn-success" asp-controller="Home" asp-action="Index" asp-route-ruta="@Model.next">next</a>
+    <a class="btn btn-danger" asp-controller="Home" asp-action="Index" asp-route-ruta="@Model.previous">back</a>
+
+
 </div>
